@@ -152,7 +152,7 @@ Pada data numerik, digunakan heatmap untuk memvisualisasikan korelasi antara fit
   Tahapan ini bertujuan untuk mengetahui missing data 
 
 - Balancing Dataset <br>
- <img src="Hasil\Balalancing.png.png" style="zoom:70%;" /><br> Pada tahap Balancing Dataset, diperlukan untuk menyeimbangkan data Outcome yang tidak seimbang. Tanpa keseimbangan, model cenderung memprioritaskan kategori dengan jumlah data yang lebih banyak. Oleh karena itu, tahap ini dilakukan dengan menggunakan teknik yang menghasilkan data dummy atau data sintetis.
+ <img src="Hasil\Balalancing.png" style="zoom:70%;" /><br> Pada tahap Balancing Dataset, diperlukan untuk menyeimbangkan data Outcome yang tidak seimbang. Tanpa keseimbangan, model cenderung memprioritaskan kategori dengan jumlah data yang lebih banyak. Oleh karena itu, tahap ini dilakukan dengan menggunakan teknik yang menghasilkan data dummy atau data sintetis.
 
 
 - Membagi data menjadi data *training* dan *testing* <br>
