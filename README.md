@@ -247,7 +247,7 @@ F1-score RF : 0.6086956521739131 <br>
 
 ### c. Bagging + Decision Tree Classifier
 Berikut hasil dari confusion matriks dari model Bagging + Decision Tree Classifier yang mana lebih overfitting dibandingkan model SVC. <br>
-<img src="Hasil\CM_Bagging.png" style="zoom:70%;" /><br>
+<img src="Hasil\CM_BAGGING.png" style="zoom:70%;" /><br>
 
 - *Accuracy*
 
