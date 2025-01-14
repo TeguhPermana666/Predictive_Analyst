@@ -205,7 +205,7 @@ Berikut hasil dari confusion matriks dari model SVC sebagai good fit dibandingka
 
   Metric ini adalah rata-rata harmonik antara precision dan recall. Nilai f1-score dapat dihitung dengan rumus di bawah ini. Selanjutnya model Random Forest Classifier, akan dihitung *metrics* f1-score dan recall. <br>
 
-Adapun hasil yang diperoleh pada model SVC sebagai model yang good fit sebagai berikut pada data testing:
+Adapun hasil yang diperoleh pada model SVC sebagai model yang good fit sebagai berikut pada data testing: <br>
 Akurasi SVC : 0.7721518987341772 <br>
 ----------------------------------------------------------------------------------------------------
 Precision SVC : 0.7222222222222222 <br>
@@ -235,7 +235,7 @@ Berikut hasil dari confusion matriks dari model RF yang mana lebih overfitting d
 
   Metric ini adalah rata-rata harmonik antara precision dan recall. Nilai f1-score dapat dihitung dengan rumus di bawah ini. Selanjutnya model Random Forest Classifier, akan dihitung *metrics* f1-score dan recall. <br>
 
-Adapun hasil yang diperoleh pada model RF sebagai model yang overfitting sebagai berikut pada data testing:
+Adapun hasil yang diperoleh pada model RF sebagai model yang overfitting sebagai berikut pada data testing: <br>
 Akurasi RF : 0.7721518987341772 <br>
 ----------------------------------------------------------------------------------------------------
 Precision RF : 0.7 <br>
@@ -265,7 +265,7 @@ Berikut hasil dari confusion matriks dari model Bagging + Decision Tree Classifi
 
   Metric ini adalah rata-rata harmonik antara precision dan recall. Nilai f1-score dapat dihitung dengan rumus di bawah ini. Selanjutnya model Random Forest Classifier, akan dihitung *metrics* f1-score dan recall. <br>
 
-Adapun hasil yang diperoleh pada model Bagging + Decision Tree Classifier sebagai model yang overfitting sebagai berikut pada data testing:
+Adapun hasil yang diperoleh pada model Bagging + Decision Tree Classifier sebagai model yang overfitting sebagai berikut pada data testing:<br>
 Akurasi Bagging : 0.759493670886076 <br>
 ----------------------------------------------------------------------------------------------------
 Precision Bagging : 0.6521739130434783 <br>
