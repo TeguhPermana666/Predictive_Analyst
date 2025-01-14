@@ -163,17 +163,22 @@ Pada data numerik, digunakan heatmap untuk memvisualisasikan korelasi antara fit
 ## Modeling
 Algoritma pada *Machine Learning* yang digunakan antara lain : 
 - **Support Vector Classifier (SVC)**, SVC bekerja dengan mencari hyperplane yang memisahkan kelas-kelas dalam data dengan margin terbesar. Dalam konteks klasifikasi, SVC mencoba menemukan garis atau bidang yang memisahkan dua kelas dengan jarak terbesar antara data dari kedua kelas tersebut. Pada penelitian ini, yang menjadi masalah klasifikasi adalah apakah pasien terkena diabetes atau tidak. Proyek ini menggunakan sklearn.svm.SVC dengan memasukkan X_train dan y_train untuk membangun model. Parameter yang digunakan pada proyek ini adalah C, yang mengontrol kompleksitas model. Nilai C yang lebih besar akan membuat model lebih fokus pada kesalahan klasifikasi, sedangkan nilai yang lebih kecil memberikan model fleksibilitas lebih besar untuk kesalahan, yang dapat menghindari overfitting.
+  - `C` = Parameter yang mengontrol kompleksitas model, nilai yang digunakan adalah `C = 1.0`. Nilai ini dipilih karena memberikan keseimbangan antara kompleksitas model dan kemampuan generalisasi sehingga di harapkan model tidak terlalu overfitting.
+  - `Kernel` = Jenis kernel yang digunakan untuk algoritma SVC adalah `kernel='rbf'` (Radial Basis Function). Kernel ini dipilih karena mampu menangkap hubungan non-linear dalam data dengan baik.
+  - `gamma`= Mengontrol jarak pengaruh satu contoh pelatihan. Dalam proyek ini, gamma yang digunakan adalah `gamma='scale'`. Nilai ini secara otomatis disesuaikan berdasarkan jumlah fitur sehingga diharapkan dapat memberikan performa optimal tanpa perlu penyesuaian secara manual.
 
 
 - **Random Forest Classifier**, merupakan salah satu algoritma populer yang digunakan karena kesederhanaannya dan memiliki stabilitas yang baik. Proyek ini menggunakan [sklearn.ensemble.RandomForestClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html?highlight=sklearn+ensemble+randomforestclassifier#sklearn.ensemble.RandomForestClassifier) dengan memasukkan X_train dan y_train dalam membangun model. Parameter yang digunakan pada proyek ini adalah :
-     `criterion` = Fungsi untuk mengukur kualitas split.
-     `n_estimators` = Jumlah tree pada forest.
-     `max_depth` = Kedalaman maksimum setiap tree.
-     `random_state` = Mengontrol seed acak yang diberikan pada setiap base_estimator pada setiap iterasi.
-Pada model ini menggunakan parameter criterion = gini ,n_estimators=100, max_depth=9, random_state=44. 
+  - `criterion` = Fungsi untuk mengukur kualitas split. Dalam proyek ini digunakan `criterion = 'gini'`. Kriteria ini dipilih karena sederhana dan efektif untuk memberdakan label data.
+  - `n_estimators` = Jumlah tree pada forest. Nilai yang digunakan adalah `n_estimators = 100`. Jumlah ini dipilih untuk memberikan keseimbangan antara akurasi dan waktu komputasi, sehingga cukup pohon untuk meningkatkan stabilitas model tanpa mengorbankan efisiensi.
+  - `max_depth` = Kedalaman maksimum setiap tree. Nilai yang digunakan adalah `max_depth = 9`. Dalam proyek ini dipilih untuk memberikan keseimbangan antara kompleksitas model dan kemampuan generalisasi sehingga di harapkan model tidak terlalu overfitting.
+  - `random_state` = Mengontrol seed acak yang diberikan pada setiap base_estimator pada setiap iterasi. Nilai yang digunakan adalah `random_state = 42`. untuk memastikan hasil yang dapat direproduksi 
 
-- **Bagging with Decision Tree Classifier**, Bagging (Bootstrap Aggregating) adalah teknik ensemble yang melibatkan pelatihan beberapa model pada subset data yang berbeda, kemudian menggabungkan prediksi mereka untuk menghasilkan hasil akhir yang lebih stabil dan akurat. Dalam hal ini, model yang digunakan adalah Decision Tree Classifier, yang merupakan model pohon keputusan yang membagi data berdasarkan fitur untuk membuat keputusan. Proyek ini menggunakan sklearn.ensemble.BaggingClassifier dengan Decision Tree sebagai estimator. Model dibangun dengan memasukkan X_train dan y_train. Parameter yang digunakan dalam proyek ini termasuk n_estimators, yang menentukan jumlah pohon keputusan yang akan dilatih, dan max_samples, yang mengatur jumlah sampel data yang digunakan untuk setiap pohon keputusan. Bagging membantu mengurangi variansi model dengan melatih model-model independen pada data yang berbeda.
-
+- **Bagging with Decision Tree Classifier**, Bagging (Bootstrap Aggregating) adalah teknik ensemble yang melibatkan pelatihan beberapa model pada subset data yang berbeda, kemudian menggabungkan prediksi mereka untuk menghasilkan hasil akhir yang lebih stabil dan akurat. Dalam hal ini, model yang digunakan adalah Decision Tree Classifier, yang merupakan model pohon keputusan yang membagi data berdasarkan fitur untuk membuat keputusan. Proyek ini menggunakan sklearn.ensemble.BaggingClassifier dengan Decision Tree sebagai estimator. Model dibangun dengan memasukkan X_train dan y_train. Parameter yang digunakan dalam proyek ini adalah :
+  - `estimator` = Model pohon keputusan yang digunakan sebagai estimator. Dalam proyek ini digunakan `Decision Tree`. Bertujuan untuk membuat keputusan berdasarkan fitur data.
+  - `n_estimator` = Menentukan jumlah pohon keputusan yang akan dilatih. Nilai yang digunakan adalah 100. Jumlah ini dipilih untuk memberikan stabilitas hasil prediksi dengan mempertimbangkan waktu komputasi.
+  - `max_samples`: Mengatur jumlah sampel data yang digunakan untuk setiap pohon keputusan. Nilai ini secara otomatis ditentukan untuk memastikan variasi antar model.
+  - `random_state` = Mengontrol seed acak yang diberikan pada setiap base_estimator pada setiap iterasi. Nilai yang digunakan adalah `random_state = 44`. untuk memastikan hasil yang dapat direproduksi
 
 
 ## Evaluation
