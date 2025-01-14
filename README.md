@@ -185,6 +185,7 @@ Sebelum menghitung Accuracy, Precision, Recall, dan F1-score. Akan dijelaskan me
 <img src="Hasil\Keseluruhan.PNG" style="zoom:50%;" /><br>
 Pada hasil dari keseluruhan dapat dilihat bahwa model pada RF dan Bagging mengalami *overfitting*, emang secara akurasi lebih tinggi namun dalam keadaan good fit, SVC tampak lebih good fit dibandingkan model RF dan Bagging. <br>
 
+### a. SVC
 Berikut hasil dari confusion matriks dari model SVC sebagai good fit dibandingkan model RF dan Bagging. <br>
 <img src="Hasil\CM_SVC.png" style="zoom:70%;" /><br>
 
@@ -204,7 +205,7 @@ Berikut hasil dari confusion matriks dari model SVC sebagai good fit dibandingka
 
   Metric ini adalah rata-rata harmonik antara precision dan recall. Nilai f1-score dapat dihitung dengan rumus di bawah ini. Selanjutnya model Random Forest Classifier, akan dihitung *metrics* f1-score dan recall. <br>
 
-Adapun hasil yang diperoleh pada model SVC sebagai model yang good fit sebagai berikut:
+Adapun hasil yang diperoleh pada model SVC sebagai model yang good fit sebagai berikut pada data testing:
 Akurasi SVC : 0.7721518987341772 <br>
 ----------------------------------------------------------------------------------------------------
 Precision SVC : 0.7222222222222222 <br>
@@ -214,6 +215,64 @@ Recall SVC : 0.5 <br>
 F1-score SVC : 0.5909090909090909 <br>
 
 Berdasarkan Projek ini , hasil metric yang diperoleh pada SVC lebih condong ke precision dibandingkan recall maka dari itu model SVC dapat di evaluasi untuk mengatasi masalah Recall.
+
+### b. RF
+Berikut hasil dari confusion matriks dari model RF yang mana lebih overfitting dibandingkan model SVC. <br>
+<img src="Hasil\CM_RF.png" style="zoom:70%;" /><br>
+- *Accuracy*
+
+  Metric akurasi mengukur sejauh mana nilai prediksi mendekati nilai aktual. Untuk menghitungnya, cukup dengan membagi jumlah prediksi yang benar dengan total data. Akurasi cocok digunakan pada kasus dengan data yang seimbang.
+
+- *Precision*
+
+  Metric ini mengukur tingkat ketepatan antara informasi yang diminta oleh pengguna dan jawaban yang diberikan oleh sistem. Nilai precision dapat dihitung menggunakan rumus yang tertera di bawah ini.   *Metric* ini fokus pada kinerja model dalam memprediksi label data positif. <br>
+
+- Recall
+
+  Metric ini mengukur tingkat keberhasilan sistem dalam menemukan kembali informasi yang hilang. Nilai recall dapat dihitung dengan rumus di bawah ini. Berbeda dengan precision yang hanya memperhitungkan label positif, metric ini menghitung bagian negatif dari prediksi label positif.<br>
+
+- F1-score
+
+  Metric ini adalah rata-rata harmonik antara precision dan recall. Nilai f1-score dapat dihitung dengan rumus di bawah ini. Selanjutnya model Random Forest Classifier, akan dihitung *metrics* f1-score dan recall. <br>
+
+Adapun hasil yang diperoleh pada model RF sebagai model yang overfitting sebagai berikut pada data testing:
+Akurasi RF : 0.7721518987341772 <br>
+----------------------------------------------------------------------------------------------------
+Precision RF : 0.7 <br>
+----------------------------------------------------------------------------------------------------
+Recall RF :  0.5384615384615384 <br>
+----------------------------------------------------------------------------------------------------
+F1-score RF : 0.6086956521739131 <br>
+
+
+### c. Bagging + Decision Tree Classifier
+Berikut hasil dari confusion matriks dari model Bagging + Decision Tree Classifier yang mana lebih overfitting dibandingkan model SVC. <br>
+<img src="Hasil\CM_Bagging.png" style="zoom:70%;" /><br>
+
+- *Accuracy*
+
+  Metric akurasi mengukur sejauh mana nilai prediksi mendekati nilai aktual. Untuk menghitungnya, cukup dengan membagi jumlah prediksi yang benar dengan total data. Akurasi cocok digunakan pada kasus dengan data yang seimbang.
+
+- *Precision*
+
+  Metric ini mengukur tingkat ketepatan antara informasi yang diminta oleh pengguna dan jawaban yang diberikan oleh sistem. Nilai precision dapat dihitung menggunakan rumus yang tertera di bawah ini.   *Metric* ini fokus pada kinerja model dalam memprediksi label data positif. <br>
+
+- Recall
+
+  Metric ini mengukur tingkat keberhasilan sistem dalam menemukan kembali informasi yang hilang. Nilai recall dapat dihitung dengan rumus di bawah ini. Berbeda dengan precision yang hanya memperhitungkan label positif, metric ini menghitung bagian negatif dari prediksi label positif.<br>
+
+- F1-score
+
+  Metric ini adalah rata-rata harmonik antara precision dan recall. Nilai f1-score dapat dihitung dengan rumus di bawah ini. Selanjutnya model Random Forest Classifier, akan dihitung *metrics* f1-score dan recall. <br>
+
+Adapun hasil yang diperoleh pada model Bagging + Decision Tree Classifier sebagai model yang overfitting sebagai berikut pada data testing:
+Akurasi Bagging : 0.759493670886076 <br>
+----------------------------------------------------------------------------------------------------
+Precision Bagging : 0.6521739130434783 <br>
+----------------------------------------------------------------------------------------------------  
+Recall Bagging :  0.5769230769230769 <br>
+----------------------------------------------------------------------------------------------------
+F1-score Bagging : 0.6122448979591837 <br>
 
 ## Kesimpulan
 Dari proyek prediksi pasien diabetes dan non-diabetes menggunakan tiga model Machine Learning, yaitu Support Vector Classifier, Random Forest Classifier, dan Bagging with Decision Tree Classifier, dapat disimpulkan bahwa algoritma `Support Vector Classifier` menunjukkan performa terbaik dibandingkan yang lain. Hal ini terlihat dari model yang lebih sesuai (good fit) dibandingkan dengan algoritma lainnya yang cenderung mengalami overfitting.
